@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Question workshop · CBIEV</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/quiz.js" defer></script>
+    <script src="js/admin.js" defer></script>
+</head>
+
+<body>
+    <main class="admin"><span class="eyebrow">CBIEV · Local publishing tool</span>
+        <h1>The question workshop.</h1>
+        <p class="notice"><strong>Edits are LOCAL ONLY.</strong> Drafts stay in this browser. Export questions.json,
+            then upload it to the website’s data folder to publish. This page is a local tool, not a secure or
+            authenticated admin dashboard.</p>
+        <div class="toolbar"><button id="export" class="primary">Export questions.json</button><label
+                class="secondary">Import JSON <input id="import" type="file" accept=".json,application/json"></label><a
+                href="index.html" target="_blank" rel="noopener">Preview published quiz ↗</a><button id="reset"
+                class="danger">Reset Draft</button></div>
+        <p id="status" class="status" role="status"></p><label class="field">Questions per round (1–100)<input
+                id="round-count" type="number" min="1" max="100" value="3"></label><small>If fewer questions are active,
+            the quiz uses all active questions.</small>
+        <label class="field">Auto-Advance Delay (seconds)<input id="advance-delay" type="number" min="2" max="10" step="1" value="3"></label>
+        <div class="admin-layout">
+            <section class="card">
+                <h2>Your question bank</h2>
+                <p id="counts"></p><button id="new" class="secondary">+ New question</button>
+                <div id="list"></div>
+            </section>
+            <section class="card">
+                <h2 id="editor-title">New question</h2>
+                <form id="editor"><label class="field">Question<textarea id="question" required
+                            maxlength="1000"></textarea></label>
+                    <div id="option-fields"></div><label class="field">Correct answer<select id="correct" required>
+                            <option value="">Choose one answer</option>
+                            <option value="0">A</option>
+                            <option value="1">B</option>
+                            <option value="2">C</option>
+                            <option value="3">D</option>
+                        </select></label><label class="field">Explanation (optional)<textarea id="explanation"
+                            maxlength="2000"></textarea></label><label><input id="enabled" type="checkbox" checked>
+                        Enabled in quiz</label>
+                    <div class="toolbar"><button class="primary" type="submit">Save to local draft</button><button
+                            id="cancel" class="secondary" type="button">Clear editor</button></div><small>Save this
+                        question before exporting. Unsaved form changes are not exported.</small>
+                </form>
+            </section>
+        </div>
+    </main>
+</body>
+
+</html>

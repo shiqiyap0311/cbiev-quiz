@@ -1,0 +1,138 @@
+{
+  "settings": {
+    "questionsPerRound": 3,
+    "autoAdvanceDelay": 3
+  },
+  "questions": [
+    {
+      "id": "demo-01",
+      "question": "[Demo] What is innovation?",
+      "options": [
+        "Turning a useful idea into value",
+        "Copying everything unchanged",
+        "Avoiding all experiments",
+        "Having ideas but never acting"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Innovation puts ideas into practice to create value.",
+      "enabled": true
+    },
+    {
+      "id": "demo-02",
+      "question": "[Demo] Why build a prototype?",
+      "options": [
+        "To guarantee success",
+        "To test an idea early",
+        "To avoid feedback",
+        "To finish every detail first"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A prototype helps you learn before investing in a full solution.",
+      "enabled": true
+    },
+    {
+      "id": "demo-03",
+      "question": "[Demo] What is a good first step for a new business idea?",
+      "options": [
+        "Order lots of stock",
+        "Choose an office",
+        "Understand a customer problem",
+        "Skip research"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Understanding a real problem helps you design something people need.",
+      "enabled": true
+    },
+    {
+      "id": "demo-04",
+      "question": "[Demo] What does customer feedback help you do?",
+      "options": [
+        "Remove all uncertainty",
+        "Guarantee a profit",
+        "Ignore user needs",
+        "Improve your solution"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Feedback reveals what works and what needs to change.",
+      "enabled": true
+    },
+    {
+      "id": "demo-05",
+      "question": "[Demo] What is an entrepreneur?",
+      "options": [
+        "Someone who creates and develops a venture",
+        "Only someone with a large office",
+        "Someone who never takes risks",
+        "Only someone who invents technology"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Entrepreneurs develop ventures by bringing together ideas, resources and action.",
+      "enabled": true
+    },
+    {
+      "id": "demo-06",
+      "question": "[Demo] What is a value proposition?",
+      "options": [
+        "A list of office supplies",
+        "The benefit you offer to a customer",
+        "A company password",
+        "A daily timetable"
+      ],
+      "correctAnswer": 1,
+      "explanation": "It explains why your solution is useful to the people you serve.",
+      "enabled": true
+    },
+    {
+      "id": "demo-07",
+      "question": "[Demo] Which habit supports creative teamwork?",
+      "options": [
+        "Rejecting every suggestion",
+        "Keeping ideas secret",
+        "Listening to different perspectives",
+        "Avoiding questions"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Different perspectives help teams discover more possibilities.",
+      "enabled": true
+    },
+    {
+      "id": "demo-08",
+      "question": "[Demo] What should you do after an experiment fails?",
+      "options": [
+        "Hide the result",
+        "Repeat without changes",
+        "Stop learning",
+        "Use the evidence to improve"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Experiments provide useful learning even when a result is unexpected.",
+      "enabled": true
+    },
+    {
+      "id": "demo-09",
+      "question": "[Demo] What does a sustainable solution consider?",
+      "options": [
+        "Long-term social and environmental impact",
+        "Only its packaging color",
+        "Only the launch day",
+        "Only the cheapest materials"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Sustainability considers how a solution affects people and the environment over time.",
+      "enabled": true
+    },
+    {
+      "id": "demo-10",
+      "question": "[Demo] Why start with a small pilot?",
+      "options": [
+        "To avoid all planning",
+        "To learn with limited resources",
+        "To guarantee demand",
+        "To eliminate customer conversations"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A small pilot lets you test assumptions before expanding.",
+      "enabled": true
+    }
+  ]
+}

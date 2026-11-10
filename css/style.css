@@ -1,0 +1,605 @@
+:root {
+    --navy: #2A3A5A;
+    --teal: #12A8B5;
+    --lime: #97B854;
+    --cream: #FFFDF7;
+    --yellow: #ffdc75
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    color: var(--navy);
+    background: var(--cream);
+    font-family: ui-rounded, 'Avenir Next', Avenir, system-ui, sans-serif;
+    line-height: 1.5;
+    background-image: radial-gradient(#2a3a5a12 1px, transparent 1px);
+    background-size: 22px 22px
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit
+}
+
+button,
+a,
+input,
+textarea,
+select {
+    -webkit-tap-highlight-color: transparent
+}
+
+button {
+    cursor: pointer
+}
+
+button:disabled {
+    cursor: default
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid #1b7187;
+    outline-offset: 5px
+}
+
+.site-header {
+    max-width: 1100px;
+    margin: auto;
+    padding: 28px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px
+}
+
+.event {
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 1px
+}
+
+.event small {
+    font-size: 10px;
+    letter-spacing: 0
+}
+
+.quiz {
+    max-width: 710px;
+    min-height: 70vh;
+    margin: 25px auto 55px;
+    padding: 0 24px;
+    text-align: center
+}
+
+.eyebrow {
+    display: inline-block;
+    background: #e7efce;
+    border: 1.5px solid var(--navy);
+    border-radius: 30px;
+    padding: 7px 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 11px;
+    font-weight: 800;
+    transform: rotate(-2deg)
+}
+
+h1 {
+    font-size: clamp(44px, 8vw, 76px);
+    line-height: 1.04;
+    letter-spacing: -3px;
+    margin: 24px 0
+}
+
+h1 em {
+    font-style: normal;
+    color: #087b87
+}
+
+h2 {
+    font-size: clamp(25px, 4vw, 34px);
+    line-height: 1.25;
+    letter-spacing: -.7px
+}
+
+.intro {
+    max-width: 420px;
+    margin: 20px auto;
+    color: #58657a;
+    font-size: 17px
+}
+
+.hero-art {
+    height: 88px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    margin: 20px 0
+}
+
+.star {
+    font-size: 66px;
+    color: var(--teal);
+    display: inline-block;
+    transform: rotate(-12deg);
+    text-shadow: 2px 3px var(--navy)
+}
+
+.ticket {
+    background: var(--yellow);
+    border: 2px solid var(--navy);
+    border-radius: 16px;
+    padding: 12px 24px;
+    transform: rotate(6deg);
+    box-shadow: 4px 4px 0 var(--navy);
+    font-size: 13px;
+    font-weight: 800
+}
+
+.ticket strong {
+    display: block;
+    font-size: 23px
+}
+
+.primary,
+.secondary,
+.danger {
+    border: 2px solid var(--navy);
+    border-radius: 18px;
+    padding: 16px 24px;
+    font-weight: 800;
+    min-height: 54px;
+    color: var(--navy);
+    background: white;
+    transition: transform .15s, box-shadow .15s
+}
+
+.primary {
+    background: var(--teal);
+    color: #102c41;
+    box-shadow: 0 5px 0 var(--navy);
+    font-size: 19px
+}
+
+.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 0 var(--navy)
+}
+
+.primary:active,
+.answer:active {
+    transform: translateY(3px);
+    box-shadow: none
+}
+
+.primary:disabled {
+    opacity: .55;
+    box-shadow: none
+}
+
+.wide {
+    width: 100%
+}
+
+.welcome-action {
+    max-width: 390px;
+    margin: 24px auto
+}
+
+.micro {
+    font-size: 12px;
+    color: #657186;
+    margin-top: 20px
+}
+
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 32px 0
+}
+
+.steps b {
+    display: inline-grid;
+    place-items: center;
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background: #e4edee;
+    margin-right: 5px
+}
+
+footer {
+    max-width: 1040px;
+    margin: auto;
+    padding: 24px;
+    border-top: 1px solid #d9dedc;
+    font-size: 11px;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    color: #657186
+}
+
+.card {
+    background: white;
+    border: 2px solid var(--navy);
+    border-radius: 28px;
+    padding: 30px;
+    box-shadow: 7px 7px 0 #dce8c4;
+    text-align: left
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px
+}
+
+.progress {
+    height: 13px;
+    border: 2px solid var(--navy);
+    border-radius: 20px;
+    background: white;
+    overflow: hidden;
+    margin: 12px 0 28px
+}
+
+.progress span {
+    display: block;
+    height: 100%;
+    background: var(--lime);
+    transition: width .3s
+}
+
+.answers {
+    display: grid;
+    gap: 12px;
+    margin: 26px 0
+}
+
+.answer {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-align: left;
+    width: 100%;
+    border: 2px solid #ced5df;
+    background: #edf6f7;
+    border-radius: 17px;
+    padding: 16px;
+    color: var(--navy);
+    font-weight: 700;
+    min-height: 65px;
+    box-shadow: 0 3px 0 #d9dfe5;
+    transition: transform .15s
+}
+
+.answer:nth-child(2) {
+    background: #f2f5e7
+}
+
+.answer:nth-child(3) {
+    background: #fff5d8
+}
+
+.answer:nth-child(4) {
+    background: #edf1fc
+}
+
+.answer b {
+    border: 1px solid currentColor;
+    border-radius: 9px;
+    min-width: 31px;
+    height: 31px;
+    display: grid;
+    place-items: center;
+    background: #ffffffaa
+}
+
+.answer:hover:not(:disabled) {
+    border-color: var(--navy);
+    transform: translateY(-2px)
+}
+
+.answer.correct {
+    background: #e4efc8;
+    border-color: #54752d
+}
+
+.answer.wrong {
+    background: #ffebe5;
+    border-color: #a64b37
+}
+
+.feedback {
+    border-radius: 15px;
+    background: #f0f4e8;
+    padding: 17px;
+    margin-bottom: 20px;
+    font-size: 14px
+}
+
+.feedback p {
+    margin: 7px 0
+}
+
+.complete {
+    text-align: center;
+    padding: 36px 25px
+}
+
+.complete h1 {
+    font-size: clamp(40px, 7vw, 62px)
+}
+
+.gift {
+    background: #fff1c7;
+    border: 2px dashed #b18b39;
+    border-radius: 18px;
+    padding: 22px;
+    font-size: 21px;
+    font-weight: 800;
+    margin: 26px 0
+}
+
+.badge {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: var(--lime);
+    border: 2px solid var(--navy);
+    display: grid;
+    place-items: center;
+    margin: auto;
+    font-size: 50px;
+    box-shadow: 5px 5px 0 var(--navy)
+}
+
+.confetti {
+    position: fixed;
+    top: -20px;
+    pointer-events: none;
+    width: 9px;
+    height: 16px;
+    animation: fall 2.8s ease-in forwards;
+    z-index: 5
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(105vh) rotate(600deg)
+    }
+}
+
+.admin {
+    max-width: 1100px;
+    margin: 20px auto 60px;
+    padding: 0 24px
+}
+
+.admin h1 {
+    font-size: 40px;
+    letter-spacing: -1.5px
+}
+
+.notice {
+    background: #fff1c7;
+    border: 1px solid #c4a55c;
+    border-radius: 14px;
+    padding: 18px
+}
+
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 22px 0;
+    align-items: center
+}
+
+.toolbar a {
+    color: var(--navy)
+}
+
+.admin-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 24px
+}
+
+.admin .card {
+    padding: 24px
+}
+
+.question-row {
+    border-bottom: 1px solid #dbe0e4;
+    padding: 16px 0;
+    display: flex;
+    gap: 12px;
+    align-items: center
+}
+
+.question-row span {
+    flex: 1;
+    overflow-wrap: anywhere
+}
+
+.question-row button {
+    padding: 8px 12px;
+    border: 1px solid var(--navy);
+    border-radius: 10px;
+    background: #edf6f7
+}
+
+.field {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 18px 0
+}
+
+.field input,
+.field textarea,
+.field select {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: 1.5px solid #a5afbd;
+    border-radius: 10px;
+    margin-top: 6px;
+    color: var(--navy);
+    background: white
+}
+
+.field textarea {
+    min-height: 90px;
+    resize: vertical
+}
+
+.danger {
+    color: #953d2c;
+    border-color: #953d2c
+}
+
+.status {
+    font-size: 14px;
+    font-weight: 700;
+    min-height: 24px
+}
+
+.tag {
+    font-size: 11px;
+    color: #607044
+}
+
+.admin small {
+    color: #657186
+}
+
+@media(max-width:650px) {
+    .site-header {
+        padding: 20px
+    }
+
+    .quiz {
+        margin-top: 18px
+    }
+
+    .card {
+        padding: 22px
+    }
+
+    .steps {
+        gap: 10px;
+        font-size: 11px
+    }
+
+    .admin-layout {
+        grid-template-columns: 1fr
+    }
+
+    footer span {
+        display: none
+    }
+
+    .admin h1 {
+        font-size: 32px
+    }
+
+    .hero-art {
+        gap: 22px
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+    *,
+    *:before,
+    *:after {
+        animation: none !important;
+        transition: none !important
+    }
+
+    .confetti {
+        display: none
+    }
+}
+/* Tactile game feedback: transform/opacity animations keep mobile painting light. */
+.answer { position: relative; touch-action: manipulation; transition: opacity .25s, background-color .2s, border-color .2s; }
+.answer.correct { background: #12A8B5; color: white; border-color: #087580; box-shadow: 0 4px 0 #087580, 0 0 24px #12a8b547; text-shadow: 0 1px 2px #17414e; }
+.answer.correct b { background: #087580; color: white; border-color: white; font-size: 24px; }
+.answer-muted { opacity: .3; box-shadow: none; }
+.answer-pop { animation: answer-spring .65s both; z-index: 1; }
+.answer.wrong { animation: answer-shake .5s both; background: #ffe5de; border-color: #cf6752; }
+.answer.wrong b { background: #b64b38; color: white; }
+.question-card { animation: question-in .38s cubic-bezier(.2,.8,.3,1) both; }
+.question-card.question-exit { animation: question-out .2s ease-in both; pointer-events: none; }
+.progress span { transition: width .45s cubic-bezier(.2,.8,.3,1); }
+.feedback-enter { animation: question-in .3s both; margin-top: 30px; }
+.result-badge { display: inline-block; background: #087580; color: white; border: 2px solid var(--navy); border-radius: 12px; padding: 8px 15px; letter-spacing: 1px; box-shadow: 3px 3px 0 #97B854; animation: badge-pop .5s both; }
+.result-retry { background: #fff0b9; color: var(--navy); box-shadow: 3px 3px 0 #edac94; }
+.continue-button:not([hidden]) { animation: question-in .3s both; }
+[hidden] { display: none !important; }
+.sparkle { position: absolute; left: 50%; top: 50%; font-size: 24px; pointer-events: none; z-index: 4; animation: sparkle-burst 1s ease-out both; text-shadow: none; }
+/* The completion page itself is the overlay: no obscured interactive background. */
+.quest-completed::before { content: ''; position: fixed; inset: 0; background: #2a3a5a38; pointer-events: none; z-index: 1; }
+.quest-completed .quiz { position: relative; z-index: 2; }
+.complete { position: relative; animation: badge-pop .6s both; box-shadow: 8px 10px 0 #97b854, 0 25px 70px #2a3a5a26; }
+.complete .badge { background: #12A8B5; color: white; border: 5px solid #d9ecb5; box-shadow: 5px 5px 0 #97B854; animation: answer-spring .8s .12s both; }
+.complete h1 { animation: badge-pop .65s .22s both; }
+@keyframes answer-spring { 0% { transform: scale(1); } 35% { transform: scale(1.045) rotate(-1deg); } 50% { transform: scale(.985) rotate(1deg); } 65% { transform: scale(1.025) rotate(-.7deg); } 80% { transform: scale(.995) rotate(.4deg); } 100% { transform: scale(1); } }
+@keyframes answer-shake { 0%,100% { transform: translateX(0); } 15%,45% { transform: translateX(-7px); background: #ef9b89; } 30%,60% { transform: translateX(7px); } 80% { transform: translateX(-3px); } }
+@keyframes badge-pop { 0% { opacity: 0; transform: scale(.8) translateY(14px); } 65% { opacity: 1; transform: scale(1.04) translateY(-2px); } 100% { opacity: 1; transform: scale(1) translateY(0); } }
+@keyframes question-in { from { opacity: 0; transform: translateY(18px) scale(.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes question-out { to { opacity: 0; transform: translateX(-18px) scale(.97); } }
+@keyframes sparkle-burst { 0% { opacity: 0; transform: translate(-50%,-50%) scale(.3); } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(calc(-50% + var(--x)),calc(-50% + var(--y))) rotate(var(--turn)) scale(.6); } }
+@media(prefers-reduced-motion: reduce) { .sparkle { display: none; } }
+
+/* Keep feedback in view even when an imported question is unusually long. */
+.tagline { font-size: 24px; font-weight: 800; margin: 12px 0; }
+.feedback-dock { position: fixed; z-index: 6; bottom: 12px; bottom: max(12px, env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); width: min(620px, calc(100% - 24px)); text-align: left; }
+.feedback-dock .feedback { margin: 0; border: 2px solid var(--navy); background: #fffdf7; box-shadow: 0 6px 30px #2a3a5a35; padding: 14px 18px; max-height: 48vh; overflow-y: auto; }
+.feedback-dock p { margin: 8px 0; }
+.countdown-controls { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 10px; }
+.countdown-label { font-size: 13px; font-weight: 800; }
+.next-now { font-size: 13px; min-height: 44px; padding: 8px 12px; white-space: nowrap; }
+.countdown-track { height: 6px; background: #e0e7d6; border-radius: 8px; margin-top: 10px; overflow: hidden; }
+.countdown-track span { display: block; height: 100%; background: var(--teal); transition: width 1s linear; }
+.answer.wrong-fade { opacity: .3; transition: opacity .3s .6s; }
+@media(max-width:650px) {
+    .site-header { padding: 12px 16px; }
+    .event { font-size: 12px; }
+    .quiz { padding: 0 16px; margin-top: 12px; }
+    .question-card { padding: 16px; }
+    .question-card h2 { font-size: 23px; margin: 10px 0; }
+    .question-card .micro { margin: 8px 0; }
+    .question-card .answers { gap: 9px; margin: 14px 0; }
+    .question-card .answer { padding: 10px 12px; min-height: 54px; font-size: 14px; }
+    .progress { margin: 8px 0 14px; }
+    .progress-label { font-size: 10px; }
+    .feedback-dock .feedback { font-size: 13px; }
+    .result-badge { padding: 5px 11px; font-size: 13px; }
+}
+
+/* Headings receive focus for screen readers, without a frame around the title. */
+.quiz h1:focus,
+.quiz h2:focus {
+    outline: none;
+}
