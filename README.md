@@ -7,7 +7,7 @@ From this directory, run `python3 -m http.server 8000`. Open http://localhost:80
 ## Edit and publish questions
 1. Open admin.html through the HTTP server. The tool restores this browser's local draft, or loads the published bank if no draft exists.
 2. Click New question, enter question text and four distinct answers, choose the correct answer, and optionally add an explanation. Toggle Enabled as needed. Click **Save to local draft**. Use Edit or Delete for existing questions; deletion requires confirmation.
-3. Set questions per round (1–100, default 5). Rounds use all active questions when fewer than the configured number are available.
+3. Questions per round is fixed at 5 for this booth. Rounds use all active questions when fewer than the configured number are available.
 4. To import, select an existing questions.json file and confirm replacement. Invalid files leave the draft unchanged. Reset Draft reloads the published bank after confirmation.
 5. Save any open form edits, then click **Export questions.json**. Export validates the full bank, including disabled questions. It downloads settings and questions; it does not update the live website.
 6. Replace `data/questions.json` in this project with the downloaded file (rename it if the browser added a suffix). Commit and upload that file to your hosted website. Preview published quiz opens the actual published JSON, never the local draft.
@@ -48,3 +48,5 @@ The editor’s Auto-Advance Delay setting accepts whole seconds from 2–10 (def
 Verify five-question rounds with both correct and incorrect answers, countdown expiry, repeated answer taps, repeated Next Now taps, background/return during countdown and transition, and restart from completion. Test delays 2 and 10, reject 1/11/fractions, and import an older bank. On phones check the fixed feedback panel and long explanations; very long imported text may scroll within the panel.
 
 If the editor restores an older sample draft, use Reset Draft and confirm to load the current official bank, or import data/questions.json. Existing local drafts are preserved until you explicitly replace them.
+
+The authoritative round size is `Quest.questionsPerRound = 5` in js/quiz.js. Validation normalizes older JSON and local admin drafts to 5; exports therefore cannot restore a three-question round. Participant play never reads localStorage. Both HTML pages version their scripts to avoid reuse of older script URLs after deployment. JSON uses fetch cache: no-store.

@@ -1,7 +1,10 @@
 /* Shared data rules also power the local editor. No participant data is stored. */
 const Quest = {
+  questionsPerRound: 5,
   validate(data) {
-    if (!data || !data.settings || !Number.isInteger(data.settings.questionsPerRound) || data.settings.questionsPerRound < 1 || data.settings.questionsPerRound > 100) throw Error('Questions per round must be a whole number from 1 to 100.');
+    if (!data || !data.settings || typeof data.settings !== 'object' || Array.isArray(data.settings)) throw Error('Question bank settings are required.');
+    // Fixed booth rule: migrate old published JSON, imports and browser drafts alike.
+    data.settings.questionsPerRound = this.questionsPerRound;
     // Older published banks and browser drafts inherit the new default.
     if (data.settings.autoAdvanceDelay === undefined) data.settings.autoAdvanceDelay = 3;
     if (!Number.isInteger(data.settings.autoAdvanceDelay) || data.settings.autoAdvanceDelay < 2 || data.settings.autoAdvanceDelay > 10) throw Error('Auto-advance delay must be a whole number from 2 to 10 seconds.');
@@ -59,9 +62,9 @@ if (app) {
     const art = el('div', undefined, 'hero-art'); art.setAttribute('aria-hidden', 'true'); const ticket = el('div', undefined, 'ticket'); ticket.append('EXPLORE · DISCOVER', el('strong', 'INNOVATE ✦')); art.append(el('span', '✦', 'star'), ticket, el('span', '✧', 'star'));
     const action = el('div', undefined, 'welcome-action'); action.append(button("Let’s Play!  →", start, 'primary wide'), el('p', 'No sign-up. Take your time to answer.', 'micro'));
     const steps = el('div', undefined, 'steps');['Pick an answer', 'Learn something', 'Claim your gift'].forEach((s, i) => { const item = el('span'); item.append(el('b', String(i + 1)), s); steps.append(item) });
-    display(el('span', 'CBIEV BOOTH · IIPC 2026', 'eyebrow'), title, el('p', 'Tap. Think. Win!', 'tagline'), el('p', `Answer ${Math.min(bank.settings.questionsPerRound, bank.questions.filter(q => q.enabled).length)} quick questions and claim your gift!`, 'intro'), art, action, steps, el('p', 'CBIEV · Innovation & entrepreneurship', 'micro'));
+    display(el('span', 'CBIEV BOOTH · IIPC 2026', 'eyebrow'), title, el('p', 'Tap. Think. Win!', 'tagline'), el('p', `Answer ${Math.min(Quest.questionsPerRound, bank.questions.filter(q => q.enabled).length)} quick questions and claim your gift!`, 'intro'), art, action, steps, el('p', 'CBIEV · Innovation & entrepreneurship', 'micro'));
   }
-  function start() { clearTimers(); resumeCountdown = null; document.body.classList.remove('quest-completed'); document.querySelectorAll('.confetti').forEach(node => node.remove()); round = Quest.shuffle(bank.questions.filter(q => q.enabled)).slice(0, bank.settings.questionsPerRound); position = 0; showQuestion(); }
+  function start() { clearTimers(); resumeCountdown = null; document.body.classList.remove('quest-completed'); document.querySelectorAll('.confetti').forEach(node => node.remove()); round = Quest.shuffle(bank.questions.filter(q => q.enabled)).slice(0, Quest.questionsPerRound); position = 0; showQuestion(); }
   function showQuestion() {
     clearTimers(); resumeCountdown = null; advancing = false; answered = false;
     const label = el('div', undefined, 'progress-label'); label.append(el('span', `Question ${position + 1}/${round.length}`), el('span', 'Keep that spark going ✦'));

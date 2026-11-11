@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Question workshop · CBIEV</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/quiz.js" defer></script>
-    <script src="js/admin.js" defer></script>
+    <script src="js/quiz.js?v=5-rounds-20261111" defer></script>
+    <script src="js/admin.js?v=5-rounds-20261111" defer></script>
 </head>
 
 <body>
@@ -20,8 +20,8 @@
                 class="secondary">Import JSON <input id="import" type="file" accept=".json,application/json"></label><a
                 href="index.html" target="_blank" rel="noopener">Preview published quiz ↗</a><button id="reset"
                 class="danger">Reset Draft</button></div>
-        <p id="status" class="status" role="status"></p><label class="field">Questions per round (1–100)<input
-                id="round-count" type="number" min="1" max="100" value="5"></label><small>If fewer questions are active,
+        <p id="status" class="status" role="status"></p><label class="field">Questions per round (fixed booth setting)<input
+                id="round-count" type="number" value="5" readonly></label><small>If fewer questions are active,
             the quiz uses all active questions.</small>
         <label class="field">Auto-Advance Delay (seconds)<input id="advance-delay" type="number" min="2" max="10" step="1" value="3"></label>
         <div class="admin-layout">
