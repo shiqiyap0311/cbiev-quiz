@@ -59,7 +59,7 @@ if (app) {
     const art = el('div', undefined, 'hero-art'); art.setAttribute('aria-hidden', 'true'); const ticket = el('div', undefined, 'ticket'); ticket.append('EXPLORE · DISCOVER', el('strong', 'INNOVATE ✦')); art.append(el('span', '✦', 'star'), ticket, el('span', '✧', 'star'));
     const action = el('div', undefined, 'welcome-action'); action.append(button("Let’s Play!  →", start, 'primary wide'), el('p', 'No sign-up. Take your time to answer.', 'micro'));
     const steps = el('div', undefined, 'steps');['Pick an answer', 'Learn something', 'Claim your gift'].forEach((s, i) => { const item = el('span'); item.append(el('b', String(i + 1)), s); steps.append(item) });
-    display(el('span', 'CBIEV BOOTH · IIPC 2026', 'eyebrow'), title, el('p', 'Tap. Think. Win!', 'tagline'), el('p', `Answer ${Math.min(bank.settings.questionsPerRound, bank.questions.filter(q => q.enabled).length)} quick questions and claim your gift!`, 'intro'), art, action, steps, el('p', 'Demo question bank · General innovation & entrepreneurship', 'micro'));
+    display(el('span', 'CBIEV BOOTH · IIPC 2026', 'eyebrow'), title, el('p', 'Tap. Think. Win!', 'tagline'), el('p', `Answer ${Math.min(bank.settings.questionsPerRound, bank.questions.filter(q => q.enabled).length)} quick questions and claim your gift!`, 'intro'), art, action, steps, el('p', 'CBIEV · Innovation & entrepreneurship', 'micro'));
   }
   function start() { clearTimers(); resumeCountdown = null; document.body.classList.remove('quest-completed'); document.querySelectorAll('.confetti').forEach(node => node.remove()); round = Quest.shuffle(bank.questions.filter(q => q.enabled)).slice(0, bank.settings.questionsPerRound); position = 0; showQuestion(); }
   function showQuestion() {

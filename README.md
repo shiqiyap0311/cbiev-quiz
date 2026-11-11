@@ -1,5 +1,5 @@
 # CBIEV QUIZ POP!
-A lightweight, mobile-first booth quiz for IIPC 2026. HTML, CSS and vanilla JavaScript; no dependencies, build step, participant storage, analytics or external services. The only participant network request is the same-site published question bank. All 10 starter questions are explicitly marked `[Demo]` and contain general innovation content, not official CBIEV facts.
+A lightweight, mobile-first booth quiz for IIPC 2026. HTML, CSS and vanilla JavaScript; no dependencies, build step, participant storage, analytics or external services. The only participant network request is the same-site published question bank. The published bank contains the 10 official CBIEV questions supplied by the booth team.
 
 ## Run locally
 From this directory, run `python3 -m http.server 8000`. Open http://localhost:8000 for the quiz and http://localhost:8000/admin.html for the editor. Do not open the HTML via file://; browsers may block JSON fetching. Stop the server with Ctrl+C.
@@ -19,7 +19,7 @@ Draft storage is browser-specific and may be cleared or unavailable. Keep export
 The root object contains `settings: { "questionsPerRound": 3 }` and a `questions` array. Every question has a unique nonempty string `id`, nonempty `question`, exactly four distinct nonempty string `options`, integer `correctAnswer` from 0 to 3 (original option order), string `explanation` (empty allowed), and boolean `enabled`. The quiz shuffles option objects with their original indexes so correctness stays intact. Empty banks or banks with no active questions show a friendly unavailable screen. Any malformed question rejects the bank rather than silently publishing bad content.
 
 ## Branding
-The header uses centered CBIEV QUIZ POP! text branding. No logo assets or CBIEV-specific facts are included. Change the demo note in js/quiz.js when replacing demonstration content with approved questions.
+The header uses centered CBIEV QUIZ POP! text branding. No logo assets are included.
 
 ## GitHub Pages
 1. Create a GitHub repository and upload index.html, admin.html, css/, js/, data/, assets/ (if used), and README.md at its root.
@@ -46,3 +46,5 @@ The header uses centered CBIEV QUIZ POP! text branding. No logo assets or CBIEV-
 The editor’s Auto-Advance Delay setting accepts whole seconds from 2–10 (default 3), saved as `settings.autoAdvanceDelay`. Older JSON files and drafts default to 3 when this field is absent. Export and publish as usual. Answering locks all options and starts the visible countdown; Next Now advances immediately. The last answer opens completion, which stays until Play Again. Timers pause while the page is hidden. Reduced motion disables decorative animation, not the countdown.
 
 Verify three-question rounds with both correct and incorrect answers, countdown expiry, repeated answer taps, repeated Next Now taps, background/return during countdown and transition, and restart from completion. Test delays 2 and 10, reject 1/11/fractions, and import an older bank. On phones check the fixed feedback panel and long explanations; very long imported text may scroll within the panel.
+
+If the editor restores an older sample draft, use Reset Draft and confirm to load the current official bank, or import data/questions.json. Existing local drafts are preserved until you explicitly replace them.
