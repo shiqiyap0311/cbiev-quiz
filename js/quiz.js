@@ -64,7 +64,7 @@ if (app) {
   function start() { clearTimers(); resumeCountdown = null; document.body.classList.remove('quest-completed'); document.querySelectorAll('.confetti').forEach(node => node.remove()); round = Quest.shuffle(bank.questions.filter(q => q.enabled)).slice(0, bank.settings.questionsPerRound); position = 0; showQuestion(); }
   function showQuestion() {
     clearTimers(); resumeCountdown = null; advancing = false; answered = false;
-    const label = el('div', undefined, 'progress-label'); label.append(el('span', `Question ${position + 1} of ${round.length}`), el('span', 'Keep that spark going ✦'));
+    const label = el('div', undefined, 'progress-label'); label.append(el('span', `Question ${position + 1}/${round.length}`), el('span', 'Keep that spark going ✦'));
     const bar = el('div', undefined, 'progress'); bar.setAttribute('role', 'progressbar'); bar.setAttribute('aria-label', 'Questions completed'); bar.setAttribute('aria-valuemin', '0'); bar.setAttribute('aria-valuemax', String(round.length)); bar.setAttribute('aria-valuenow', String(position)); const fill = el('span'); fill.style.width = `${position / round.length * 100}%`; bar.append(fill);
     const q = round[position], card = el('section', undefined, 'card question-card'), answers = el('div', undefined, 'answers'), feedback = el('div');
     card.append(el('span', 'A BRIGHT LITTLE CHALLENGE', 'tag'), el('h2', q.question), el('p', 'Tap the answer that feels right.', 'micro'), answers);

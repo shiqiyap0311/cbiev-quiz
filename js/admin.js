@@ -1,6 +1,6 @@
 /* Only this editor uses localStorage. Published content always comes from JSON. */
 const key = 'cbiev-question-draft-v1', $ = id => document.getElementById(id);
-let draft = { settings: { questionsPerRound: 3, autoAdvanceDelay: 3 }, questions: [] }, editing = null;
+let draft = { settings: { questionsPerRound: 5, autoAdvanceDelay: 3 }, questions: [] }, editing = null;
 const status = message => { $('status').textContent = message };
 function persist() { try { localStorage.setItem(key, JSON.stringify(draft)); status('Draft saved in this browser only. Export to publish.') } catch { status('Browser storage is unavailable or full. Export now to keep your changes.') } }
 function render() { $('advance-delay').value = draft.settings.autoAdvanceDelay; $('counts').textContent = `${draft.questions.length} total · ${draft.questions.filter(q => q.enabled).length} active`; $('round-count').value = draft.settings.questionsPerRound; $('list').replaceChildren(); draft.questions.forEach(q => { const row = el('div', undefined, 'question-row'), text = el('span', `${q.enabled ? '● Active' : '○ Disabled'} · ${q.question}`); row.append(text, button('Edit', () => edit(q), 'secondary'), button('Delete', () => { if (confirm('Delete this question from the local draft?')) { draft.questions = draft.questions.filter(item => item.id !== q.id); if (editing === q.id) clear(); persist(); render() } }, 'danger')); $('list').append(row) }) }

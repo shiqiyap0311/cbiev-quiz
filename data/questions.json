@@ -1,6 +1,6 @@
 {
   "settings": {
-    "questionsPerRound": 3,
+    "questionsPerRound": 5,
     "autoAdvanceDelay": 3
   },
   "questions": [
