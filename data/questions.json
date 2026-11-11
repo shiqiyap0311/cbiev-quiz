@@ -5,133 +5,133 @@
   },
   "questions": [
     {
-      "id": "demo-01",
-      "question": "[Demo] What is innovation?",
+      "id": "1",
+      "question": "When was CBIEV established?",
       "options": [
-        "Turning a useful idea into value",
-        "Copying everything unchanged",
-        "Avoiding all experiments",
-        "Having ideas but never acting"
-      ],
-      "correctAnswer": 0,
-      "explanation": "Innovation puts ideas into practice to create value.",
-      "enabled": true
-    },
-    {
-      "id": "demo-02",
-      "question": "[Demo] Why build a prototype?",
-      "options": [
-        "To guarantee success",
-        "To test an idea early",
-        "To avoid feedback",
-        "To finish every detail first"
-      ],
-      "correctAnswer": 1,
-      "explanation": "A prototype helps you learn before investing in a full solution.",
-      "enabled": true
-    },
-    {
-      "id": "demo-03",
-      "question": "[Demo] What is a good first step for a new business idea?",
-      "options": [
-        "Order lots of stock",
-        "Choose an office",
-        "Understand a customer problem",
-        "Skip research"
+        "2017",
+        "2018",
+        "2016",
+        "2020"
       ],
       "correctAnswer": 2,
-      "explanation": "Understanding a real problem helps you design something people need.",
+      "explanation": "",
       "enabled": true
     },
     {
-      "id": "demo-04",
-      "question": "[Demo] What does customer feedback help you do?",
+      "id": "2",
+      "question": "What does CBIEV stand for?",
       "options": [
-        "Remove all uncertainty",
-        "Guarantee a profit",
-        "Ignore user needs",
-        "Improve your solution"
-      ],
-      "correctAnswer": 3,
-      "explanation": "Feedback reveals what works and what needs to change.",
-      "enabled": true
-    },
-    {
-      "id": "demo-05",
-      "question": "[Demo] What is an entrepreneur?",
-      "options": [
-        "Someone who creates and develops a venture",
-        "Only someone with a large office",
-        "Someone who never takes risks",
-        "Only someone who invents technology"
-      ],
-      "correctAnswer": 0,
-      "explanation": "Entrepreneurs develop ventures by bringing together ideas, resources and action.",
-      "enabled": true
-    },
-    {
-      "id": "demo-06",
-      "question": "[Demo] What is a value proposition?",
-      "options": [
-        "A list of office supplies",
-        "The benefit you offer to a customer",
-        "A company password",
-        "A daily timetable"
+        "Centre for Basic Innovation & Event Ventures",
+        "Centre for Business Incubation & Entrepreneurial Ventures",
+        "Centre for Business Information & Education Ventures",
+        "Centre for Business Ideas & Event Values"
       ],
       "correctAnswer": 1,
-      "explanation": "It explains why your solution is useful to the people you serve.",
+      "explanation": "",
       "enabled": true
     },
     {
-      "id": "demo-07",
-      "question": "[Demo] Which habit supports creative teamwork?",
+      "id": "3",
+      "question": "Benefit of iSpark program?",
       "options": [
-        "Rejecting every suggestion",
-        "Keeping ideas secret",
-        "Listening to different perspectives",
-        "Avoiding questions"
+        "Free lunch",
+        "Free hostel",
+        "Upskilling programmes",
+        "Free movies"
       ],
       "correctAnswer": 2,
-      "explanation": "Different perspectives help teams discover more possibilities.",
+      "explanation": "",
       "enabled": true
     },
     {
-      "id": "demo-08",
-      "question": "[Demo] What should you do after an experiment fails?",
+      "id": "4",
+      "question": "Max iSpark Prototype Funding?",
       "options": [
-        "Hide the result",
-        "Repeat without changes",
-        "Stop learning",
-        "Use the evidence to improve"
+        "RM1,000",
+        "RM2,000",
+        "RM3,000",
+        "RM5,000"
       ],
       "correctAnswer": 3,
-      "explanation": "Experiments provide useful learning even when a result is unexpected.",
+      "explanation": "",
       "enabled": true
     },
     {
-      "id": "demo-09",
-      "question": "[Demo] What does a sustainable solution consider?",
+      "id": "5",
+      "question": "iSpark participants compete in?",
       "options": [
-        "Long-term social and environmental impact",
-        "Only its packaging color",
-        "Only the launch day",
-        "Only the cheapest materials"
+        "Cooking",
+        "Singing",
+        "Innovation competitions",
+        "Chess"
       ],
-      "correctAnswer": 0,
-      "explanation": "Sustainability considers how a solution affects people and the environment over time.",
+      "correctAnswer": 2,
+      "explanation": "",
       "enabled": true
     },
     {
-      "id": "demo-10",
-      "question": "[Demo] Why start with a small pilot?",
+      "id": "6",
+      "question": "iSpark organises?",
       "options": [
-        "To avoid all planning",
-        "To learn with limited resources",
-        "To guarantee demand",
-        "To eliminate customer conversations"
+        "Sports day",
+        "Fashion shows",
+        "Entrepreneurship events",
+        "Movie nights"
+      ],
+      "correctAnswer": 2,
+      "explanation": "",
+      "enabled": true
+    },
+    {
+      "id": "7",
+      "question": "iSpark facility?",
+      "options": [
+        "Pool",
+        "Co-working space",
+        "Karaoke",
+        "Gym"
       ],
       "correctAnswer": 1,
-      "explanation": "A small pilot lets you test assumptions before expanding.",
+      "explanation": "",
+      "enabled": true
+    },
+    {
+      "id": "8",
+      "question": "When was IIPC established?",
+      "options": [
+        "2018",
+        "2019",
+        "2020",
+        "2021"
+      ],
+      "correctAnswer": 2,
+      "explanation": "",
+      "enabled": true
+    },
+    {
+      "id": "9",
+      "question": "Main purpose of CBIEV?",
+      "options": [
+        "Sports",
+        "Concerts",
+        "Student Startups",
+        "Merchandise"
+      ],
+      "correctAnswer": 2,
+      "explanation": "",
+      "enabled": true
+    },
+    {
+      "id": "10",
+      "question": "Aim of iSpark?",
+      "options": [
+        "Cooking",
+        "Entrepreneurship Skills",
+        "Sports",
+        "Tours"
+      ],
+      "correctAnswer": 1,
+      "explanation": "",
       "enabled": true
     }
   ]
