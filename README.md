@@ -1,5 +1,5 @@
 # CBIEV QUIZ POP!
-A lightweight, mobile-first booth quiz for IIPC 2026. HTML, CSS and vanilla JavaScript; no dependencies, build step, participant storage, analytics or external services. The only participant network request is the same-site published question bank. The published bank contains the 10 official CBIEV questions supplied by the booth team.
+A lightweight, mobile-first booth quiz for IIPC 2026. HTML, CSS and vanilla JavaScript; no dependencies, build step, participant storage, analytics or external services. The only participant network request is the same-site published question bank. The published bank contains exactly the 5 IIPC questions supplied by the booth team.
 
 ## Run locally
 From this directory, run `python3 -m http.server 8000`. Open http://localhost:8000 for the quiz and http://localhost:8000/admin.html for the editor. Do not open the HTML via file://; browsers may block JSON fetching. Stop the server with Ctrl+C.
@@ -30,7 +30,7 @@ The header uses centered CBIEV QUIZ POP! text branding. No logo assets are inclu
 
 ## Manual test checklist
 - On iPhone Safari and Android Chrome: check 320px and larger widths, portrait/landscape, readable text, no horizontal scrolling, and comfortable tap targets.
-- Start: five distinct questions appear by default; repeat rounds to observe different order/subsets.
+- Start: five distinct questions appear by default; repeat rounds to observe different question and answer orders.
 - Compare each answer to JSON after options shuffle. Correct answer stays correct regardless of letter.
 - Tap correct and incorrect answers: all options lock, correct answer and explanation appear, and continuation remains available. Rapid double taps must not skip a question.
 - Complete: verify exact gift message, count, confetti, and Play Again. No score, personal information or login is requested.
@@ -47,6 +47,6 @@ The editor’s Auto-Advance Delay setting accepts whole seconds from 2–10 (def
 
 Verify five-question rounds with both correct and incorrect answers, countdown expiry, repeated answer taps, repeated Next Now taps, background/return during countdown and transition, and restart from completion. Test delays 2 and 10, reject 1/11/fractions, and import an older bank. On phones check the fixed feedback panel and long explanations; very long imported text may scroll within the panel.
 
-If the editor restores an older sample draft, use Reset Draft and confirm to load the current official bank, or import data/questions.json. Existing local drafts are preserved until you explicitly replace them.
+The IIPC content update removes the legacy `cbiev-question-draft-v1` browser draft and uses `cbiev-question-draft-iipc-2026-v2`, so Admin initially loads the same five published IIPC questions. Subsequent IIPC drafts remain local; use Reset Draft to reload the published bank.
 
 The authoritative round size is `Quest.questionsPerRound = 5` in js/quiz.js. Validation normalizes older JSON and local admin drafts to 5; exports therefore cannot restore a three-question round. Participant play never reads localStorage. Both HTML pages version their scripts to avoid reuse of older script URLs after deployment. JSON uses fetch cache: no-store.

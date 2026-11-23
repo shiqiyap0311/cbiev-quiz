@@ -6,51 +6,51 @@
   "questions": [
     {
       "id": "1",
-      "question": "When was CBIEV established?",
+      "question": "What does IIPC stand for?",
       "options": [
-        "2017",
-        "2018",
-        "2016",
-        "2020"
-      ],
-      "correctAnswer": 2,
-      "explanation": "",
-      "enabled": true
-    },
-    {
-      "id": "2",
-      "question": "What does CBIEV stand for?",
-      "options": [
-        "Centre for Basic Innovation & Event Ventures",
-        "Centre for Business Incubation & Entrepreneurial Ventures",
-        "Centre for Business Information & Education Ventures",
-        "Centre for Business Ideas & Event Values"
+        "iSpark International Project Conference",
+        "iSpark International Pitching Competition",
+        "iSpark Innovation and Product Challenge",
+        "International Industry Partnership Convention"
       ],
       "correctAnswer": 1,
       "explanation": "",
       "enabled": true
     },
     {
-      "id": "3",
-      "question": "Benefit of iSpark program?",
+      "id": "2",
+      "question": "Which centre first conceptualised IIPC in 2020?",
       "options": [
-        "Free lunch",
-        "Free hostel",
-        "Upskilling programmes",
-        "Free movies"
+        "Centre for Research and Development",
+        "Centre for International Studies",
+        "Centre for Business Incubation and Entrepreneurial Ventures (CBIEV)",
+        "Centre for Academic Development"
       ],
       "correctAnswer": 2,
       "explanation": "",
       "enabled": true
     },
     {
-      "id": "4",
-      "question": "Max iSpark Prototype Funding?",
+      "id": "3",
+      "question": "Besides pitching their ideas, what can students gain from participating in IIPC?",
       "options": [
-        "RM1,000",
-        "RM2,000",
-        "RM3,000",
-        "RM5,000"
+        "International exposure, feedback, and networking opportunities",
+        "Guaranteed business funding",
+        "Automatic qualification for the final round",
+        "Guaranteed job placements"
+      ],
+      "correctAnswer": 0,
+      "explanation": "",
+      "enabled": true
+    },
+    {
+      "id": "4",
+      "question": "In which country was the iSpark International Pitching Competition Alliance (IIPCA) officially established?",
+      "options": [
+        "Malaysia",
+        "Thailand",
+        "Singapore",
+        "China"
       ],
       "correctAnswer": 3,
       "explanation": "",
@@ -58,77 +58,12 @@
     },
     {
       "id": "5",
-      "question": "iSpark participants compete in?",
+      "question": "Complete the IIPC 2026 tagline: \"Scale Beyond • Prove Beyond • ______ Beyond.\"",
       "options": [
-        "Cooking",
-        "Singing",
-        "Innovation competitions",
-        "Chess"
-      ],
-      "correctAnswer": 2,
-      "explanation": "",
-      "enabled": true
-    },
-    {
-      "id": "6",
-      "question": "iSpark organises?",
-      "options": [
-        "Sports day",
-        "Fashion shows",
-        "Entrepreneurship events",
-        "Movie nights"
-      ],
-      "correctAnswer": 2,
-      "explanation": "",
-      "enabled": true
-    },
-    {
-      "id": "7",
-      "question": "iSpark facility?",
-      "options": [
-        "Pool",
-        "Co-working space",
-        "Karaoke",
-        "Gym"
-      ],
-      "correctAnswer": 1,
-      "explanation": "",
-      "enabled": true
-    },
-    {
-      "id": "8",
-      "question": "When was IIPC established?",
-      "options": [
-        "2018",
-        "2019",
-        "2020",
-        "2021"
-      ],
-      "correctAnswer": 2,
-      "explanation": "",
-      "enabled": true
-    },
-    {
-      "id": "9",
-      "question": "Main purpose of CBIEV?",
-      "options": [
-        "Sports",
-        "Concerts",
-        "Student Startups",
-        "Merchandise"
-      ],
-      "correctAnswer": 2,
-      "explanation": "",
-      "enabled": true
-    },
-    {
-      "id": "10",
-      "question": "Aim of iSpark?",
-      "options": [
-        "Cooking",
-        "Entrepreneurship Skills",
-        "Sports",
-        "Tours"
+        "Succeed",
+        "Sustain",
+        "Support",
+        "Start"
       ],
       "correctAnswer": 1,
       "explanation": "",
