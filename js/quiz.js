@@ -92,7 +92,7 @@ if (app) {
         }
         fill.style.width = `${(position + 1) / round.length * 100}%`;
         bar.setAttribute('aria-valuenow', String(position + 1));
-        const note = el('div', undefined, 'feedback feedback-enter');
+        const note = el('div', undefined, `feedback feedback-enter${correct ? '' : ' feedback-incorrect'}`);
         note.tabIndex = -1;
         note.append(el('strong', correct ? 'CORRECT!' : 'NOT QUITE!', `result-badge ${correct ? '' : 'result-retry'}`));
         note.append(el('p', `Correct answer: ${q.options[q.correctAnswer]}`));
