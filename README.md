@@ -1,13 +1,13 @@
 # CBIEV QUIZ POP!
-A lightweight, mobile-first booth quiz for IIPC 2026. HTML, CSS and vanilla JavaScript; no dependencies, build step, participant storage, analytics or external services. The only participant network request is the same-site published question bank. The published bank contains exactly the 5 IIPC questions supplied by the booth team.
+A lightweight, mobile-first booth quiz for IIPC 2026. HTML, CSS and vanilla JavaScript; no dependencies, build step, participant storage, analytics or external services. The only participant network request is the same-site published question bank. The published bank contains the 10 original CBIEV questions and 5 IIPC questions supplied by the booth team.
 
 ## Run locally
 From this directory, run `python3 -m http.server 8000`. Open http://localhost:8000 for the quiz and http://localhost:8000/admin.html for the editor. Do not open the HTML via file://; browsers may block JSON fetching. Stop the server with Ctrl+C.
 
 ## Edit and publish questions
 1. Open admin.html through the HTTP server. The tool restores this browser's local draft, or loads the published bank if no draft exists.
-2. Click New question, enter question text and four distinct answers, choose the correct answer, and optionally add an explanation. Toggle Enabled as needed. Click **Save to local draft**. Use Edit or Delete for existing questions; deletion requires confirmation.
-3. Questions per round is fixed at 5 for this booth. Rounds use all active questions when fewer than the configured number are available.
+2. Click New question, choose CBIEV or IIPC, enter question text and four distinct answers, choose the correct answer, and optionally add an explanation. Toggle Enabled as needed. Click **Save to local draft**. Use Edit or Delete for existing questions; deletion requires confirmation.
+3. Questions per round is fixed at 5 for this booth. Each new round, including Play Again, draws exactly 1 active CBIEV question and 4 unique active IIPC questions, then shuffles their display order. These quotas are enforced in JavaScript and cannot be overridden by JSON settings or local drafts. If either category has insufficient active questions, the quiz shows an unavailable message; exports are blocked until the category minimums are restored.
 4. To import, select an existing questions.json file and confirm replacement. Invalid files leave the draft unchanged. Reset Draft reloads the published bank after confirmation.
 5. Save any open form edits, then click **Export questions.json**. Export validates the full bank, including disabled questions. It downloads settings and questions; it does not update the live website.
 6. Replace `data/questions.json` in this project with the downloaded file (rename it if the browser added a suffix). Commit and upload that file to your hosted website. Preview published quiz opens the actual published JSON, never the local draft.
@@ -16,7 +16,7 @@ From this directory, run `python3 -m http.server 8000`. Open http://localhost:80
 Draft storage is browser-specific and may be cleared or unavailable. Keep exported backups. Only admin drafts use localStorage. The admin page has no authentication and is not a secure dashboard; visitors cannot publish through it. Hosting/repository access controls who can publish.
 
 ## Data format
-The root object contains `settings: { "questionsPerRound": 5 }` and a `questions` array. Every question has a unique nonempty string `id`, nonempty `question`, exactly four distinct nonempty string `options`, integer `correctAnswer` from 0 to 3 (original option order), string `explanation` (empty allowed), and boolean `enabled`. The quiz shuffles option objects with their original indexes so correctness stays intact. Empty banks or banks with no active questions show a friendly unavailable screen. Any malformed question rejects the bank rather than silently publishing bad content.
+The root object contains `settings: { "questionsPerRound": 5 }` and a `questions` array. Every question has a unique nonempty string `id`, `category` (`CBIEV` or `IIPC`), nonempty `question`, exactly four distinct nonempty string `options`, integer `correctAnswer` from 0 to 3 (original option order), string `explanation` (empty allowed), and boolean `enabled`. The quiz shuffles option objects with their original indexes so correctness stays intact. Empty banks or banks with no active questions show a friendly unavailable screen. Any malformed question rejects the bank rather than silently publishing bad content.
 
 ## Branding
 The header uses centered CBIEV QUIZ POP! text branding. No logo assets are included.
@@ -30,7 +30,7 @@ The header uses centered CBIEV QUIZ POP! text branding. No logo assets are inclu
 
 ## Manual test checklist
 - On iPhone Safari and Android Chrome: check 320px and larger widths, portrait/landscape, readable text, no horizontal scrolling, and comfortable tap targets.
-- Start: five distinct questions appear by default; repeat rounds to observe different question and answer orders.
+- Start: five distinct questions (1 CBIEV + 4 IIPC) appear every round; repeat rounds to observe different question and answer orders.
 - Compare each answer to JSON after options shuffle. Correct answer stays correct regardless of letter.
 - Tap correct and incorrect answers: all options lock, correct answer and explanation appear, and continuation remains available. Rapid double taps must not skip a question.
 - Complete: verify exact gift message, count, confetti, and Play Again. No score, personal information or login is requested.
@@ -38,7 +38,7 @@ The header uses centered CBIEV QUIZ POP! text branding. No logo assets are inclu
 - Admin: add, edit, disable and delete; cancel deletion; reload and verify draft restoration and counts.
 - Export then import: verify settings, IDs, options, correctness and enabled flags survive the round trip. Preview must still show published content until the file is replaced.
 - Import malformed JSON, duplicate IDs, missing fields, invalid indexes and duplicate options: clear errors, existing draft preserved.
-- Test missing JSON, invalid published JSON, empty bank and all disabled questions: friendly message, retry available. Test one active question with round length five.
+- Test missing JSON, invalid published JSON, empty bank and all disabled questions: friendly message, retry available. Test fewer than 1 active CBIEV or 4 active IIPC questions: the quiz must not start a shortened or incorrect round.
 - Reset Draft: cancel preserves edits; confirm restores published bank. With JSON unavailable, reset preserves draft.
 - Check browser storage: no participant data is saved. With storage blocked, editor warns and export still works.
 
@@ -47,6 +47,9 @@ The editor’s Auto-Advance Delay setting accepts whole seconds from 2–10 (def
 
 Verify five-question rounds with both correct and incorrect answers, countdown expiry, repeated answer taps, repeated Next Now taps, background/return during countdown and transition, and restart from completion. Test delays 2 and 10, reject 1/11/fractions, and import an older bank. On phones check the fixed feedback panel and long explanations; very long imported text may scroll within the panel.
 
-The IIPC content update removes the legacy `cbiev-question-draft-v1` browser draft and uses `cbiev-question-draft-iipc-2026-v2`, so Admin initially loads the same five published IIPC questions. Subsequent IIPC drafts remain local; use Reset Draft to reload the published bank.
+The category update removes legacy `cbiev-question-draft-v1` and `cbiev-question-draft-iipc-2026-v2` browser drafts and `cbiev-question-draft-categories-v3` browser drafts, and uses `cbiev-question-draft-categories-v4`, so Admin initially loads the same 15 published questions with categories. Subsequent categorized drafts remain local; use Reset Draft to reload the published bank. Imports without categories are rejected; assign categories before importing them.
 
 The authoritative round size is `Quest.questionsPerRound = 5` in js/quiz.js. Validation normalizes older JSON and local admin drafts to 5; exports therefore cannot restore a three-question round. Participant play never reads localStorage. Both HTML pages version their scripts to avoid reuse of older script URLs after deployment. JSON uses fetch cache: no-store.
+
+## Automated validation
+Run `node tests/quiz.test.cjs` from the project root. This checks 1,000 simulated category selections and shuffled answer mappings, settings overrides, insufficient category pools, 12 full runtime rounds with controlled timers, and Admin category fields/cache migration.
