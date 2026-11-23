@@ -576,9 +576,9 @@ footer {
 .tagline { font-size: 24px; font-weight: 800; margin: 12px 0; }
 .feedback-dock { position: fixed; z-index: 6; bottom: 12px; bottom: max(12px, env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); width: min(620px, calc(100% - 24px)); text-align: left; }
 .feedback-dock .feedback { margin: 0; border: 2px solid var(--navy); background: #fffdf7; box-shadow: 0 6px 30px #2a3a5a35; padding: 14px 18px; max-height: 48vh; overflow-y: auto; }
-.feedback-dock .feedback-incorrect { background: #ffe5de; border-color: #b64b38; }
-.feedback-incorrect .countdown-track { background: #f3c2b7; }
-.feedback-incorrect .countdown-track span { background: #b64b38; }
+.feedback-dock .feedback-incorrect { background: #b42318; border-color: #8f1c13; color: white; }
+.feedback-incorrect .countdown-track { background: #ffffff40; }
+.feedback-incorrect .countdown-track span { background: white; }
 .feedback-dock p { margin: 8px 0; }
 .countdown-controls { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 10px; }
 .countdown-label { font-size: 13px; font-weight: 800; }
